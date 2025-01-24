@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c983de95c95742b68527e976ef5e625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTime: 0
+  maxGameTime: 20
   pool: {fileID: 816969751}
   player: {fileID: 550073446}
 --- !u!4 &29203344
@@ -5081,7 +5083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 843194644954190373, guid: ec3c272762a8d49cfa45f11a4a338926, type: 3}
   - {fileID: 6316297620689631225, guid: 634620f6696224a40b329bddce726fcd, type: 3}
 --- !u!4 &816969752
 Transform:
@@ -18994,6 +18995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: []
+  spawnData: []
 --- !u!1 &2124506687
 GameObject:
   m_ObjectHideFlags: 0
@@ -19031,8 +19033,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1565236782}
   - {fileID: 1845970412}
-  - {fileID: 550073445}
-  - {fileID: 1458584919}
-  - {fileID: 1799820025}
   - {fileID: 29203344}
   - {fileID: 816969752}
+  - {fileID: 1799820025}
+  - {fileID: 550073445}
+  - {fileID: 1458584919}
