@@ -63,7 +63,9 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Bullet"))
             return;
 
-        health -= collision.GetComponent<Bullet>().damage;
+        var bulletLogic = collision.GetComponent<Bullet>();
+        if(bulletLogic!=null)
+            health -= bulletLogic.damage;
 
         if (health > 0)
         {

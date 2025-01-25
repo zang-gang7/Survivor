@@ -1,18 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Reposition : MonoBehaviour
 {
+    public TileMapManager tilemapManager_;
     Collider2D coll;
 
     void Awake()
     {
         coll = GetComponent<Collider2D>();
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            return;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            return;
+        if (collision.tag == "Area")
+            tilemapManager_.exitEvent(transform.gameObject);
+        //tilemapManager_.exitEvent(transform.gameObject);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        return;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        return;
+    }
     void OnTriggerExit2D(Collider2D collision)
     {
+        return;
+        /*
         if (!collision.CompareTag("Area"))
             return;
         
@@ -30,11 +54,11 @@ public class Reposition : MonoBehaviour
             case "Ground":
                 if (diffX > diffY)
                 {
-                    transform.Translate(Vector3.right * dirX * 40);
+                    transform.Translate(Vector3.right * dirX * 60);
                 }
                 else if (diffX < diffY)
                 {
-                    transform.Translate(Vector3.up * dirY * 40);
+                    transform.Translate(Vector3.up * dirY * 60);
                 }
                 break;
             case "Enemy":
@@ -44,5 +68,6 @@ public class Reposition : MonoBehaviour
                 }
                 break;
         }    
+        */
     }
 }
