@@ -71,7 +71,7 @@ public class TileMapManager : MonoBehaviour
             }
 
             tileMapListVerticalUp.Clear();
-            foreach (var obj in tileMapListHorizontalCenter)
+            foreach (var obj in tileMapListVerticalCenter)
                 tileMapListVerticalUp.Add(obj);
 
             tileMapListVerticalCenter.Clear();
@@ -89,7 +89,7 @@ public class TileMapManager : MonoBehaviour
             }
 
             tileMapListVerticalDown.Clear();
-            foreach (var obj in tileMapListHorizontalCenter)
+            foreach (var obj in tileMapListVerticalCenter)
                 tileMapListVerticalDown.Add(obj);
 
             tileMapListVerticalCenter.Clear();
