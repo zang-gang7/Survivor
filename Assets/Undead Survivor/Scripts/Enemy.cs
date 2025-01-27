@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
-        wait = GetComponent<WaitForFixedUpdate>();
+        wait = new WaitForFixedUpdate();
     }
 
     void FixedUpdate()

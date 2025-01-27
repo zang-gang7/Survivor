@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
                 break;
 
-            default :
+            default:
                 timer += Time.deltaTime;
 
                 if (timer > speed)
@@ -61,7 +61,7 @@ public class Weapon : MonoBehaviour
                 speed = 150;
                 Batch();
                 break;
-            default :
+            default:
                 speed = 0.3f;
                 break;
         }
