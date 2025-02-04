@@ -64,7 +64,7 @@ public class Weapon : MonoBehaviour
         // Property Set
         id = data.itemId;
         damage = data.baseDamage * Character.Damage;
-        count = data.baseCount * Character.Count;
+        count = data.baseCount + Character.Count;
 
         for (int index = 0; index < GameManager.instance.pool.prefabs.Length; index++)
         {
