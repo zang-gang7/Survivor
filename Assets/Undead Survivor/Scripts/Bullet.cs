@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
 
         if (per < 0)
         {
-            if(rigid!=null)
+            if (rigid!=null)
                 rigid.velocity = Vector2.zero;
             gameObject.SetActive(false);
         }
@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Area") || per == -100)
+        if (!collision.CompareTag("Enemy") || per == -100)
             return;
         
         gameObject.SetActive(false);
