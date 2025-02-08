@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public RuntimeAnimatorController[] animCon;
     public Rigidbody2D target;
+    public GameObject expPrefab;
 
     bool isLive;
 
@@ -95,12 +97,13 @@ public class Enemy : MonoBehaviour
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
-            GameManager.instance.GetExp();
 
             if (GameManager.instance.isLive)
             {
                 AudioManager.instance.PlaySfx(AudioManager.Sfx.Dead);
             }
+
+            Instantiate(expPrefab, transform.position, Quaternion.identity);
         }
     }
 
