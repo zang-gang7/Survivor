@@ -19737,7 +19737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &550073442
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -30616,6 +30616,8 @@ MonoBehaviour:
   - {fileID: 70218372}
   - {fileID: 441236008}
   centerTile: {fileID: 0}
+  curTile: {fileID: 0}
+  moveTile: {fileID: 0}
 --- !u!1 &981646633
 GameObject:
   m_ObjectHideFlags: 0
@@ -47545,7 +47547,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31807327, y: 0.33549213}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &1937766014
 GameObject:
