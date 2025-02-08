@@ -139,12 +139,4 @@ public class GameManager : MonoBehaviour
         uiJoy.localScale = Vector3.one;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            GetExp();
-            gameObject.SetActive(false);
-        }
-    }
 }
