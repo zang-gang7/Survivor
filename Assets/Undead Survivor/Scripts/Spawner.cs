@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -14,7 +16,6 @@ public class Spawner : MonoBehaviour
     void Awake()
     {
         spawnPoint = GetComponentsInChildren<Transform>();
-        levelTime = GameManager.instance.maxGameTime / spawnData.Length;
     }
     void Update()
     {
@@ -34,8 +35,17 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         GameObject enemy = GameManager.instance.pool.Get(0);
-        enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        enemy.transform.position = spawnPoint[UnityEngine.Random.Range(1, spawnPoint.Length)].position;
         enemy.GetComponent<Enemy>().Init(spawnData[level]);
+        foreach(var component in spawnData[level].additionalComponents)
+        {
+            if (!enemy.GetComponent(component.GetClass().ToString()))
+            {
+                Type t = component.GetClass();
+                enemy.AddComponent(t);
+            }
+
+        }
     }
 }
 
@@ -46,4 +56,5 @@ public class SpawnData
     public int spriteType;
     public int health;
     public float speed;
+    public List<MonoScript> additionalComponents;
 }
