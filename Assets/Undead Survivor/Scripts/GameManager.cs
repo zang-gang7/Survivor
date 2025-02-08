@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     public Result uiResult;
     public Transform uiJoy;
     public GameObject enemyCleaner;
+
+    public List<Exp> Exps = new List<Exp>();
 
 
     void Awake()
@@ -107,6 +110,16 @@ public class GameManager : MonoBehaviour
         {
             gameTime = maxGameTime;
             GameVictory();
+        }
+
+        foreach(var exp in Exps)
+        {
+            float dist = MathF.Sqrt(MathF.Pow(player.transform.position.x - exp.transform.position.x, 2) + MathF.Pow(player.transform.position.y - exp.transform.position.y, 2));
+
+            if(dist<= player.expGainRange)
+            {
+                exp.setMoveToPosition(player.transform.position);
+            }
         }
     }
 

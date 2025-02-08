@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
+    public float expGainRange = 5; 
     public Scanner scanner;
     public Hand[] hands;
     public RuntimeAnimatorController[] animCon;

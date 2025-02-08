@@ -160,6 +160,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
+  expAmount: 5
   nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
   pool: {fileID: 816969751}
   player: {fileID: 550073446}
@@ -167,6 +168,7 @@ MonoBehaviour:
   uiResult: {fileID: 1571916621}
   uiJoy: {fileID: 944067624}
   enemyCleaner: {fileID: 848550955}
+  Exps: []
 --- !u!4 &29203344
 Transform:
   m_ObjectHideFlags: 0
@@ -19733,11 +19735,11 @@ GameObject:
   - component: {fileID: 550073450}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &550073442
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19886,6 +19888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
   speed: 3
+  expGainRange: 50
   scanner: {fileID: 0}
   hands: []
   animCon:
@@ -30616,8 +30619,6 @@ MonoBehaviour:
   - {fileID: 70218372}
   - {fileID: 441236008}
   centerTile: {fileID: 0}
-  curTile: {fileID: 0}
-  moveTile: {fileID: 0}
 --- !u!1 &981646633
 GameObject:
   m_ObjectHideFlags: 0
