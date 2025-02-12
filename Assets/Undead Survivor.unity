@@ -25501,6 +25501,7 @@ MonoBehaviour:
   - {fileID: 6316297620689631225, guid: 634620f6696224a40b329bddce726fcd, type: 3}
   - {fileID: 2802282451045235734, guid: 666e93bf8f2654619be0bce9b209e5ee, type: 3}
   - {fileID: 3714316347082394811, guid: 739d5843443a442db8f1937d7ba1e695, type: 3}
+  - {fileID: 3714316347082394811, guid: e28767b11a2d841b19aab5c48047b073, type: 3}
 --- !u!4 &816969752
 Transform:
   m_ObjectHideFlags: 0
@@ -48317,12 +48318,14 @@ MonoBehaviour:
     spriteType: 2
     health: 10
     speed: 1.5
-    additionalComponents: []
+    additionalComponents:
+    - {fileID: 11500000, guid: 7f732885a515b410b9dba6b51b7dab67, type: 3}
   - spawnTime: 1.5
     spriteType: 3
     health: 10
     speed: 1.5
-    additionalComponents: []
+    additionalComponents:
+    - {fileID: 11500000, guid: edd87330a71af4c868d8286337624c37, type: 3}
   levelTime: 10
 --- !u!1 &1976858968
 GameObject:
