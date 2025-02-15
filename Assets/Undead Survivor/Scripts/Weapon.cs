@@ -81,6 +81,9 @@ public class Weapon : MonoBehaviour
                 speed = 150 * Character.WeaponSpeed;
                 Batch();
                 break;
+            case 5:
+                speed = 3;
+                break;
             default:
                 speed = 0.5f * Character.WeaponRate;
                 break;
@@ -134,7 +137,14 @@ public class Weapon : MonoBehaviour
         Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        bullet.GetComponent<Bullet>().Init(damage, count, dir);
+
+        if(bullet.GetComponent<Bullet>() != null)
+            bullet.GetComponent<Bullet>().Init(damage, count, dir);
+        else if(bullet.GetComponent<InstallProjectile>())
+        {
+            bullet.GetComponent<InstallProjectile>().setParameter();
+        }
+   
 
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Range);
     }

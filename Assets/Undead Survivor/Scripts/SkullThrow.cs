@@ -12,6 +12,10 @@ public class SkullThrow : MonoBehaviour
 
     Player player;
 
+    private void OnDisable()
+    {
+        Destroy(this);
+    }
     private void Start()
     {
         player = GameManager.instance.player;

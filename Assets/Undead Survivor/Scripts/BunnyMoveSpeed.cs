@@ -10,7 +10,10 @@ public class BunnyMoveSpeed : MonoBehaviour
     public float speedIncrease = 1f;
     public float increaseInterval = 3f;
 
-
+    private void OnDisable()
+    {
+        Destroy(this);
+    }
     private void Start()
     {
         InvokeRepeating("SpeedIncrease", increaseInterval, increaseInterval);

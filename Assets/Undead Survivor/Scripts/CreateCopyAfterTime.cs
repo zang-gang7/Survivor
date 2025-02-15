@@ -13,7 +13,10 @@ public class CreateCopyAfterTime : MonoBehaviour
     {
         
     }
-
+    private void OnDisable()
+    {
+        Destroy(this);
+    }
     private void FixedUpdate()
     {
         curTime += Time.deltaTime;

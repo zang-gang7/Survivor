@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
 
         player.gameObject.SetActive(true);
-        uiLevelUp.Select(playerId % 2);
+        uiLevelUp.Select(playerId);
         Resume();
 
         AudioManager.instance.PlayBgm(true);
