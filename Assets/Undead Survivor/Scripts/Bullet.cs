@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         this.damage = damage;
         this.per = per;
 
-        if(per >= 0)
+        if(per >= 0 && rigid!=null)
         {
             rigid.velocity = dir * 15f;
         }

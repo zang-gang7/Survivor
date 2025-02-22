@@ -39,6 +39,16 @@ public class AchiveManager : MonoBehaviour
         UnlockCharacter();
     }
 
+    public void LockCharacter()
+    {
+        for (int index = 0; index < lockCharacter.Length; index++)
+        {
+            string achiveName = achives[index].ToString();
+            PlayerPrefs.SetInt(achiveName, 0);
+            lockCharacter[index].SetActive(true);
+            unlockCharacter[index].SetActive(false);
+        }
+    }
     void UnlockCharacter()
     {
         for (int index = 0; index < lockCharacter.Length; index++)
